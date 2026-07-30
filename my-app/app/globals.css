@@ -1,26 +1,223 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-ui);
+  --font-mono: var(--font-data);
+  --font-heading: var(--font-voice);
+  --font-voice: var(--font-voice);
+  --font-data: var(--font-data);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* NutriScan semantic colors */
+  --color-healthy: var(--verdict-healthy);
+  --color-healthy-bg: var(--verdict-healthy-bg);
+  --color-healthy-text: var(--verdict-healthy-text);
+  --color-moderate: var(--verdict-moderate);
+  --color-moderate-bg: var(--verdict-moderate-bg);
+  --color-moderate-text: var(--verdict-moderate-text);
+  --color-avoid: var(--verdict-avoid);
+  --color-avoid-bg: var(--verdict-avoid-bg);
+  --color-avoid-text: var(--verdict-avoid-text);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-accent-cyan-light: var(--accent-cyan-light);
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ================================================================
+   NutriScan Dark Theme — always-on dark (no light/dark toggle)
+   ================================================================ */
+
+:root {
+  /* Surfaces */
+  --surface-0: #07080A;
+  --surface-1: #0F1114;
+  --surface-2: #171A1F;
+  --surface-3: #20242B;
+  --surface-inset: #030405;
+
+  /* Text */
+  --text-primary: #F3F5F7;
+  --text-secondary: #A7AEB8;
+  --text-tertiary: #6E7580;
+
+  /* Borders */
+  --border-hairline: #1E2228;
+  --border-default: #262B33;
+  --border-strong: #333944;
+
+  /* Accent — Cyan/Teal */
+  --accent-50: #E4F7FB;
+  --accent-200: #8FE3F2;
+  --accent-400: #3FCDE8;
+  --accent-500: #17BEE0;
+  --accent-600: #0FA0C2;
+  --accent-900: #0A2E38;
+
+  /* shadcn accent alias */
+  --accent-cyan: #17BEE0;
+  --accent-cyan-light: #3FCDE8;
+
+  /* Verdicts */
+  --verdict-healthy: #7BAE6F;
+  --verdict-healthy-bg: #16211A;
+  --verdict-healthy-text: #A9CE9E;
+  --verdict-moderate: #D1A24A;
+  --verdict-moderate-bg: #241D10;
+  --verdict-moderate-text: #E6C077;
+  --verdict-avoid: #C4614F;
+  --verdict-avoid-bg: #26140F;
+  --verdict-avoid-text: #E08D7C;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --max-width: 1180px;
+
+  /* shadcn/ui mapping — dark surface palette */
+  --background: #07080A;
+  --foreground: #F3F5F7;
+  --card: #0F1114;
+  --card-foreground: #F3F5F7;
+  --popover: #0F1114;
+  --popover-foreground: #F3F5F7;
+  --primary: #17BEE0;
+  --primary-foreground: #051217;
+  --secondary: #171A1F;
+  --secondary-foreground: #F3F5F7;
+  --muted: #171A1F;
+  --muted-foreground: #6E7580;
+  --accent: #171A1F;
+  --accent-foreground: #F3F5F7;
+  --destructive: #C4614F;
+  --border: #262B33;
+  --input: #262B33;
+  --ring: #17BEE0;
+  --chart-1: #17BEE0;
+  --chart-2: #7BAE6F;
+  --chart-3: #D1A24A;
+  --chart-4: #C4614F;
+  --chart-5: #3FCDE8;
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: #0F1114;
+  --sidebar-foreground: #F3F5F7;
+  --sidebar-primary: #17BEE0;
+  --sidebar-primary-foreground: #051217;
+  --sidebar-accent: #171A1F;
+  --sidebar-accent-foreground: #F3F5F7;
+  --sidebar-border: #262B33;
+  --sidebar-ring: #17BEE0;
+}
+
+/* Always dark — no .dark class needed */
+.dark {
+  --background: #07080A;
+  --foreground: #F3F5F7;
+  --card: #0F1114;
+  --card-foreground: #F3F5F7;
+  --popover: #0F1114;
+  --popover-foreground: #F3F5F7;
+  --primary: #17BEE0;
+  --primary-foreground: #051217;
+  --secondary: #171A1F;
+  --secondary-foreground: #F3F5F7;
+  --muted: #171A1F;
+  --muted-foreground: #6E7580;
+  --accent: #171A1F;
+  --accent-foreground: #F3F5F7;
+  --destructive: #C4614F;
+  --border: #262B33;
+  --input: #262B33;
+  --ring: #17BEE0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ================================================================
+   NutriScan custom utilities
+   ================================================================ */
+
+@layer utilities {
+  .font-voice {
+    font-family: var(--font-voice);
+  }
+  .font-data {
+    font-family: var(--font-data);
+  }
+  .bg-surface-0 { background-color: var(--surface-0); }
+  .bg-surface-1 { background-color: var(--surface-1); }
+  .bg-surface-2 { background-color: var(--surface-2); }
+  .bg-surface-3 { background-color: var(--surface-3); }
+  .text-nutri-primary { color: var(--text-primary); }
+  .text-nutri-secondary { color: var(--text-secondary); }
+  .text-nutri-tertiary { color: var(--text-tertiary); }
+  .border-nutri-hairline { border-color: var(--border-hairline); }
+  .border-nutri-default { border-color: var(--border-default); }
+  .border-nutri-strong { border-color: var(--border-strong); }
+  .text-accent-cyan { color: var(--accent-400); }
+  .bg-accent-dark { background-color: var(--accent-900); }
 }
