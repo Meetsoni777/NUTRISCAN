@@ -56,6 +56,8 @@ export default function HomePage() {
               <span>Trusted by 40,000+ health-conscious shoppers</span>
             </div>
           </div>
+
+                {/* poster image */}
           <div className="relative flex min-h-[380px] items-center justify-center">
             <div className="relative flex h-[340px] w-[280px] items-center justify-center overflow-hidden rounded-[16px] border border-border bg-surface-1">
               <div className="absolute left-3.5 top-3.5 h-7 w-7 rounded-l-md rounded-t-md border-2 border-accent-cyan border-r-0 border-b-0" />
@@ -76,6 +78,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        
       </section>
 
       {/* ===== FEATURES ===== */}
