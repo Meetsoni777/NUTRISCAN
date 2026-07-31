@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/context/AuthContext";
 import { Button } from "@/components/ui/button";
@@ -35,9 +36,8 @@ export default function LoginPage() {
   return (
     <>
       <div className="mb-8 text-center">
-        <Link href="/" className="inline-flex items-center gap-2.5 text-sm font-bold tracking-wide">
-          <span className="h-[9px] w-[9px] rotate-45 rounded-sm bg-accent-cyan" />
-          NUTRISCAN
+        <Link href="/" className="inline-flex items-center">
+          <Image src="/logo.jpeg" alt="NutriScan Logo" width={36} height={36} className="h-9 w-9 rounded-md object-contain" />
         </Link>
       </div>
       <Card className="border-border bg-surface-1">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,9 +7,15 @@ export default function Footer() {
       <div className="mx-auto max-w-[1180px] px-6 py-14 md:px-8">
         <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 text-sm font-bold tracking-wide">
-              <span className="h-[9px] w-[9px] rotate-45 rounded-sm bg-accent-cyan" />
-              NUTRISCAN
+            <Link href="/" className="flex items-center">
+
+              <Image src="/nlogo.png" alt="NutriScan Logo" width={36} height={36} className="h-9 w-9 rounded-md object-contain" />
+
+              <h1 className="text-2xl font-heading leading-none w-10 m-3">
+                <span className="text-white">NUTRI</span>
+                <span className="text-sky-400">SCAN</span>
+              </h1>
+             
             </Link>
             <p className="mt-4 max-w-[220px] text-[13.5px] leading-relaxed text-text-tertiary">
               Plain-language food label analysis, built for the grocery aisle.

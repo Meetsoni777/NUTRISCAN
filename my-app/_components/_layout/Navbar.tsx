@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { useAuth } from "@/lib/context/AuthContext";
 import {
@@ -25,10 +26,10 @@ export default function Navbar() {
 
   const initials = user?.name
     ? user.name
-        .split(" ")
-        .map((n) => n[0])
-        .join("")
-        .toUpperCase()
+      .split(" ")
+      .map((n) => n[0])
+      .join("")
+      .toUpperCase()
     : "?";
 
   const visibleLinks = navLinks.filter(
@@ -38,9 +39,13 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/72 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-6 md:px-8">
-        <Link href="/" className="flex items-center gap-2.5 text-base font-bold tracking-wide">
-          <span className="h-[9px] w-[9px] rotate-45 rounded-sm bg-accent-cyan" />
-          NUTRISCAN
+        <Link href="/" className="flex items-center">
+          <Image src="/nlogo.png" alt="NutriScan Logo" width={40} height={40} className="h-50 w-10 rounded-md object-contain" />
+           
+        <h1 className="text-2xl font-heading leading-none w-10 m-3">
+          <span className="text-white">NUTRI</span>
+          <span className="text-sky-400">SCAN</span>
+        </h1>
         </Link>
 
         <nav className="hidden items-center gap-9 text-[15px] font-semibold md:flex" aria-label="Primary">
@@ -71,6 +76,7 @@ export default function Navbar() {
                   <p className="text-xs text-muted-foreground">{user?.email}</p>
                 </div>
                 <DropdownMenuSeparator />
+
                 <DropdownMenuItem onClick={() => (window.location.href = "/dashboard")} className="flex items-center gap-2">
                   <LayoutDashboard className="h-4 w-4" />
                   Dashboard
