@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-7 text-[12.5px] text-text-tertiary">
-          <span>&copy; 2026 NutriScan. All rights reserved.</span>
+          <span>&copy; 2026 NutriScan.</span>
           <span>Nutrition data referenced from Open Food Facts and WHO guidelines.</span>
         </div>
       </div>
