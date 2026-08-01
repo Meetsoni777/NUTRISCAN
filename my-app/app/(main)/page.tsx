@@ -26,59 +26,48 @@ export default function HomePage() {
     <>
       {/* ===== HERO ===== */}
       <section className="px-6 py-22 md:px-8">
-        <div className="mx-auto grid max-w-[1180px] items-center gap-14 md:grid-cols-[1fr_0.9fr]">
-          <div>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent-dark px-3.5 py-1.5 text-[12.5px] font-semibold text-accent-cyan">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-cyan" />
-              Now reading labels in 2 seconds
-            </span>
-            <h1 className="mb-5.5 font-voice text-[56px] font-medium leading-[1.08] tracking-tight">
-              Scan today,<br />stay <span className="text-accent-cyan">healthy</span>
-            </h1>
-            <p className="mb-9 max-w-[440px] text-[17px] leading-relaxed text-text-secondary">
-              Make informed food choices for a better and healthier tomorrow. Point your camera at any label and get a plain-language verdict in seconds.
-            </p>
-            <div className="mb-11 flex gap-3.5">
-              <Link href="/scan" className="inline-flex items-center gap-2 rounded-[10px] border border-transparent bg-accent-cyan px-[22px] py-3 text-sm font-semibold text-background transition-all hover:bg-accent-cyan-light active:scale-[0.98]">
-                <Camera className="h-[18px] w-[18px]" />
-                Scan product
-              </Link>
-              <Link href="#how-it-works" className="inline-flex items-center gap-2 rounded-[10px] border border-border-strong bg-transparent px-[22px] py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface-2">
-                How it works
-              </Link>
-            </div>
-            <div className="flex items-center gap-4.5 text-[13px] text-text-tertiary">
-              <div className="flex" aria-hidden="true">
-                {[1, 2, 3, 4].map((i) => (
-                  <span key={i} className="h-7 w-7 rounded-full border-2 border-background bg-surface-3 -ml-2 first:ml-0" />
-                ))}
-              </div>
-              <span>Trusted by 40,000+ health-conscious shoppers</span>
-            </div>
-          </div>
-
-                {/* poster image */}
-          <div className="relative flex min-h-[380px] items-center justify-center">
-            <div className="relative flex h-[340px] w-[280px] items-center justify-center overflow-hidden rounded-[16px] border border-border bg-surface-1">
-              <div className="absolute left-3.5 top-3.5 h-7 w-7 rounded-l-md rounded-t-md border-2 border-accent-cyan border-r-0 border-b-0" />
-              <div className="absolute bottom-3.5 right-3.5 h-7 w-7 rounded-r-md rounded-b-md border-2 border-accent-cyan border-l-0 border-t-0" />
-              <div className="flex h-[120px] w-24 items-center justify-center rounded-lg border border-border bg-surface-2 text-text-tertiary">
-                <svg width="40" height="46" viewBox="0 0 24 28" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M7 2h10l1 5H6l1-5Z" />
-                  <path d="M6 7h12l1.5 17a2 2 0 0 1-2 2.2H6.5a2 2 0 0 1-2-2.2L6 7Z" />
-                </svg>
-              </div>
-            </div>
-            <div className="absolute -left-7 bottom-[-18px] w-[220px] rounded-[10px] border border-border bg-surface-2 p-3.5 shadow-2xl md:left-0">
-              <p className="mb-1.5 text-[11px] uppercase tracking-wider text-text-tertiary">Scan complete</p>
-              <span className="inline-flex items-center gap-[7px] rounded-full bg-verdict-healthy-bg px-3 py-[5px] text-[12.5px] font-semibold text-verdict-healthy-text">
-                <span className="h-[7px] w-[7px] rounded-full bg-verdict-healthy" />
-                Healthy
+        <div className="mx-auto max-w-[1180px]">
+          <div className="grid items-center gap-12 md:grid-cols-2">
+            <div>
+              <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent-dark px-3.5 py-1.5 text-[12.5px] font-semibold text-accent-cyan">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent-cyan" />
+                Now reading labels in 2 seconds
               </span>
+              <h1 className="mb-5.5 font-voice text-[56px] font-medium leading-[1.08] tracking-tight">
+                Scan today,<br />stay <span className="text-accent-cyan">healthy</span>
+              </h1>
+              <p className="mb-9 max-w-[440px] text-[17px] leading-relaxed text-text-secondary">
+                Make informed food choices for a better and healthier tomorrow. Point your camera at any label and get a plain-language verdict in seconds.
+              </p>
+              <div className="mb-11 flex gap-3.5">
+                <Link href="/scan" className="inline-flex items-center gap-2 rounded-[10px] border border-transparent bg-accent-cyan px-[22px] py-3 text-sm font-semibold text-background transition-all hover:bg-accent-cyan-light active:scale-[0.98]">
+                  <Camera className="h-[18px] w-[18px]" />
+                  Scan product
+                </Link>
+                <Link href="#how-it-works" className="inline-flex items-center gap-2 rounded-[10px] border border-border-strong bg-transparent px-[22px] py-3 text-sm font-semibold text-foreground transition-all hover:bg-surface-2">
+                  How it works
+                </Link>
+              </div>
+              <div className="flex items-center gap-4.5 text-[13px] text-text-tertiary">
+                <div className="flex" aria-hidden="true">
+                  {[1, 2, 3, 4].map((i) => (
+                    <span key={i} className="h-7 w-7 rounded-full border-2 border-background bg-surface-3 -ml-2 first:ml-0" />
+                  ))}
+                </div>
+                <span>Trusted by 40,000+ health-conscious shoppers</span>
+              </div>
+            </div>
+            {/* Hero Image */}
+            <div className="relative hidden md:block">
+              <img
+                src="/hero-phone-mockup.png"
+                alt="Nutriscan health score dashboard"
+                className="h-140 w-100% rounded-[20px] object-cover"
+
+              />
             </div>
           </div>
         </div>
-        
       </section>
 
       {/* ===== FEATURES ===== */}
