@@ -17,7 +17,7 @@ import { Menu, LogOut, LayoutDashboard, Shield } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/scan", label: "Scan" },
-  { href: "/dashboard", label: "Dashboard" },
+  { href: "/dashboard", label: "Dashboard", authOnly: true },
 ];
 
 export default function Navbar() {
