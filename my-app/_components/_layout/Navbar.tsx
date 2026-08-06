@@ -17,7 +17,7 @@ import { Menu, LogOut, LayoutDashboard, Shield } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/scan", label: "Scan" },
-  { href: "/dashboard", label: "Dashboard", authOnly: true },
+  { href: "/dashboard", label: "Dashboard"},
 ];
 
 export default function Navbar() {
@@ -32,9 +32,7 @@ export default function Navbar() {
       .toUpperCase()
     : "?";
 
-  const visibleLinks = navLinks.filter(
-    (link) => !link.authOnly || isAuthenticated
-  );
+  const visibleLinks = navLinks;
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/72 backdrop-blur-xl">
